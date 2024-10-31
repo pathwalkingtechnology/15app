@@ -8,12 +8,18 @@ export default function EventDetails() {
         className="bg-[url('/encabezado.png')] bg-cover bg-center bg-no-repeat h-40 flex items-center justify-center"
         style={{ backgroundSize: "100% auto" }}
       ></div>
+      <div className="bg-transparent text-center">
+        <Image
+          src="/corona.png"
+          alt="Corona"
+          width={100}
+          height={100}
+          className="mx-auto"
+        />
+      </div>
       <div className="bg-transparent py-8 px-4 sm:px-8 md:px-16 lg:px-24 mx-4 text-center">
-        <p className="text-gray-700 italic text-lg">
+        <p className="text-3xl sm:text-4xl font-cursive text-titleGreen italic px-4 mt-4">
           &quot;Con la bendición de Dios y mis padres, me siento feliz de llegar a este momento de mi vida, el día que dejaré atrás mi infancia y comenzaré un nuevo viaje.&quot;
-        </p>
-        <p className="mt-4">
-          Sus papás Efraín Daniel Valencia y Melisa Solange Cabana te invitan a compartir este importante acontecimiento...
         </p>
       </div>
       <div
@@ -27,6 +33,9 @@ export default function EventDetails() {
         style={{ backgroundSize: "100% auto" }}
       ></div>
       <div className="bg-transparent py-8 px-4 sm:px-8 md:px-16 lg:px-24 mx-4 text-center">
+        <p className="mt-4">
+          Sus papás Efraín Daniel Valencia y Melisa Solange Cabana te invitan a compartir este importante acontecimiento...
+        </p>
         <h3 className="text-2xl font-semibold">SÁBADO 30 NOV.</h3>
         <p className="text-lg">HOTEL CASINO Gral. San Martín, Palpalá</p>
         <p className="text-lg">21:30 Hrs.</p>
