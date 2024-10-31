@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 
 export default function Header() {
@@ -23,49 +22,29 @@ export default function Header() {
   }, [ref]);
 
   return (
-    <header className="text-center p-6 bg-white relative">
-      {/* Sección 1: Cita inspiradora */}
-      <section className="flex flex-col items-center mb-12">
-        <Image
-          src="/encabezado.png"
-          alt="Encabezado decorativo"
-          width={800}
-          height={150}
-          className="w-full max-w-md mx-auto mb-4"
-        />
+    <header className="relative text-center bg-white">
+      {/* Sección 1: Encabezado como fondo */}
+      <section
+        className="bg-[url('/encabezado.png')] bg-cover bg-center bg-no-repeat h-40 flex items-center justify-center"
+        style={{ backgroundSize: "100% auto" }}
+      >
         <p className="text-3xl sm:text-4xl font-cursive text-titleGreen italic px-4">
           &ldquo;Existen momentos en la vida que imaginamos, soñamos y esperamos,
           uno de esos momentos ha llegado.&ldquo;
         </p>
-        <Image
-          src="/cuerpo_pie.png"
-          alt="Pie decorativo"
-          width={800}
-          height={150}
-          className="w-full max-w-md mx-auto mt-4"
-        />
       </section>
 
-      {/* Sección 2: Detalle de los 15 años */}
+      {/* Contenido Central */}
       <section
         ref={ref}
-        className={`flex flex-col items-center transition-opacity duration-700 ${
+        className={`flex flex-col items-center bg-white py-8 px-4 sm:px-8 md:px-16 lg:px-24 shadow-lg mx-4 rounded-lg transition-opacity duration-700 ${
           visible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <Image
-          src="/encabezado.png"
-          alt="Encabezado decorativo"
-          width={800}
-          height={150}
-          className="w-full max-w-md mx-auto mb-4"
-        />
         <div className="mb-6">
-          <Image
+          <img
             src="/princesa.png"
             alt="Imagen de la princesa"
-            width={400}
-            height={300}
             className="w-full max-w-xs mx-auto"
           />
         </div>
@@ -75,14 +54,18 @@ export default function Header() {
         <h2 className="text-xl sm:text-2xl text-primaryGreen mt-2">
           Joselyn Natali Valencia
         </h2>
-        <Image
-          src="/cuerpo_pie.png"
-          alt="Pie decorativo"
-          width={800}
-          height={150}
-          className="w-full max-w-md mx-auto mt-4"
-        />
+      </section>
+
+      {/* Sección 2: Pie como fondo */}
+      <section
+        className="bg-[url('/cuerpo_pie.png')] bg-cover bg-center bg-no-repeat h-40 flex items-center justify-center"
+        style={{ backgroundSize: "100% auto" }}
+      >
+        <p className="text-xl text-primaryGreen font-light px-4">
+          &ldquo;Te esperamos en esta ocasión tan especial.&ldquo;
+        </p>
       </section>
     </header>
   );
 }
+
