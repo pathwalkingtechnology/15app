@@ -13,7 +13,7 @@ export default function Header() {
           style={{ backgroundSize: "100% auto" }}
         ></div>
         <div className="bg-transparent py-8 px-4 sm:px-8 md:px-16 lg:px-24 mx-4">
-          <p className="text-2xl sm:text-3xl font-cursive text-titleGreen italic px-4 mt-4 leading-relaxed">
+          <p className="text-5xl sm:text-3xl font-cursive text-titleGreen italic px-4 mt-4 leading-relaxed">
             &ldquo;Existen momentos en la vida que imaginamos, soñamos y esperamos,
             uno de esos momentos ha llegado.&ldquo;
           </p>
