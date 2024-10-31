@@ -38,7 +38,7 @@ export default function Header() {
               className="w-full max-w-xs mx-auto"
             />
           </div>
-          <h1 className="text-4xl sm:text-5xl font-cursive text-titleGreen mb-4">
+          <h1 className="text-6xl sm:text-5xl font-cursive text-titleGreen mb-4">
             Mis 15 Años
           </h1>
           <h2 className="text-lg sm:text-xl text-primaryGreen mt-2">
