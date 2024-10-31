@@ -4,14 +4,11 @@ import { useState } from "react";
 export default function ConfirmAttendance() {
   const [isOpen, setIsOpen] = useState(false);
   const [nombre, setNombre] = useState("");
-  const [cantidad, setCantidad] = useState<number | "">("");
   const [mensaje, setMensaje] = useState("");
 
   const handleConfirmacion = async (e: React.FormEvent) => {
     e.preventDefault();
-    const confirmacion = window.confirm(
-      `¿Confirmar asistencia para ${nombre} con ${cantidad} invitado(s)?`
-    );
+    const confirmacion = window.confirm(`¿Confirmar asistencia para ${nombre}?`);
 
     if (confirmacion) {
       const response = await fetch("/api/confirm", {
@@ -19,13 +16,12 @@ export default function ConfirmAttendance() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ nombre, cantidad }),
+        body: JSON.stringify({ nombre }),
       });
 
       if (response.ok) {
         setMensaje("Gracias por tu confirmación. ¡Te espero, Joselyn!");
         setNombre("");
-        setCantidad("");
       } else {
         setMensaje("Hubo un error al guardar la confirmación. Inténtalo nuevamente.");
       }
@@ -52,17 +48,6 @@ export default function ConfirmAttendance() {
                 placeholder="Nombre o Familia"
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
-                required
-                className="border p-2 w-full mb-4 rounded"
-              />
-              <input
-                type="number"
-                placeholder="Cantidad de personas"
-                value={cantidad === "" ? "" : cantidad}
-                onChange={(e) => {
-                  const value = parseInt(e.target.value, 10);
-                  setCantidad(!isNaN(value) ? value : "");
-                }}
                 required
                 className="border p-2 w-full mb-4 rounded"
               />

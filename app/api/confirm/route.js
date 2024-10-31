@@ -4,7 +4,7 @@ import path from 'path';
 const filePath = path.join(process.cwd(), 'public/invitados.json');
 
 export async function POST(req) {
-  const { nombre, cantidad } = await req.json();
+  const { nombre } = await req.json();
 
   // Leer el archivo JSON
   let invitados = [];
@@ -14,7 +14,7 @@ export async function POST(req) {
   }
 
   // Agregar nuevo invitado
-  invitados.push({ nombre, cantidad });
+  invitados.push({ nombre });
 
   // Guardar el archivo JSON actualizado
   fs.writeFileSync(filePath, JSON.stringify(invitados, null, 2));
