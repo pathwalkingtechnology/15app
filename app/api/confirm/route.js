@@ -1,28 +1,33 @@
 // app/api/confirm/route.js
-import { supabase } from '../../supabaseClient';
+import { supabase } from '../../../supabaseClient';
 
-export default async function handler(req, res) {
-  if (req.method === 'POST') {
-    const { nombre } = req.body;
+export const POST = async (req) => {
+  const { nombre } = await req.json();
 
-    if (!nombre) {
-      return res.status(400).json({ error: 'El nombre es obligatorio' });
-    }
-
-    try {
-      const { error } = await supabase
-        .from('invitados')
-        .insert([{ nombre, confirmacion: true }]);
-
-      if (error) {
-        throw error;
-      }
-
-      res.status(200).json({ mensaje: 'Confirmación de asistencia registrada' });
-    } catch (error) {
-      res.status(500).json({ error: 'Error al registrar la confirmación' });
-    }
-  } else {
-    res.status(405).json({ mensaje: 'Método no permitido' });
+  if (!nombre) {
+    return new Response(JSON.stringify({ error: 'El nombre es obligatorio' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
-}
+
+  try {
+    const { error } = await supabase
+      .from('invitados')
+      .insert([{ nombre, confirmacion: true }]);
+
+    if (error) {
+      throw error;
+    }
+
+    return new Response(JSON.stringify({ mensaje: 'Confirmación de asistencia registrada' }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  } catch (error) {
+    return new Response(JSON.stringify({ error: 'Error al registrar la confirmación' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+};
