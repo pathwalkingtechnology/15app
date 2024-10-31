@@ -1,21 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Dancing+Script:wght@400&display=swap"); /* Usa Dancing Script si Cream Cake no está disponible */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-geist-sans: "geistSans";
+  --font-geist-mono: "geistMono";
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Configuración para el cuerpo de la web */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply text-primaryGreen font-sans antialiased;
 }
