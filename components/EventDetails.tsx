@@ -8,7 +8,8 @@ export default function EventDetails() {
         <p className="text-lg">HOTEL CASINO Gral. San Martín, Palpalá</p>
         <p className="text-lg">21:30 Hrs.</p>
         <p className="text-lg">_________________</p>
-        <p className="text-lg">REGALOS: CVU: MCABANA8900.NX.ARS</p>
+        <p className="text-lg">Si deseas Colaborar podes hacerlo al siguiente ALIAS: MCABANA8900.NX.ARS</p>
+        <p className="text-lg">O el día de la fiesta podrás depositar en un sobre la colaboración que será bien recibida.</p>
       </div>
     </section>
   );
