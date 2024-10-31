@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 
 export default function Header() {
   const [visible, setVisible] = useState(false);
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +28,7 @@ export default function Header() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [ref]);
-
+  
   return (
     <header className="text-center p-6 relative">
       
