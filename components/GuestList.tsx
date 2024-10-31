@@ -3,7 +3,6 @@ import { jsPDF } from 'jspdf';
 
 interface Invitado {
   nombre: string;
-  cantidad: number;
 }
 
 export default function GuestList() {
@@ -22,7 +21,7 @@ export default function GuestList() {
     const doc = new jsPDF();
     doc.text('Lista de Invitados', 10, 10);
     invitados.forEach((invitado, index) => {
-      doc.text(`${index + 1}. ${invitado.nombre} - ${invitado.cantidad} personas`, 10, 20 + index * 10);
+      doc.text(`${index + 1}. ${invitado.nombre}`, 10, 20 + index * 10);
     });
     doc.save('lista_de_invitados.pdf');
   };
@@ -35,9 +34,8 @@ export default function GuestList() {
       </button>
       <ul className="mt-4">
         {invitados.map((invitado, index) => (
-          <li key={index} className="flex justify-between p-2 border-b">
-            <span>{invitado.nombre}</span>
-            <span>{invitado.cantidad} personas</span>
+          <li key={index} className="flex p-2 border-b">
+            <span className="w-full">{invitado.nombre}</span>
           </li>
         ))}
       </ul>
