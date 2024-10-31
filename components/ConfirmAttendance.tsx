@@ -20,7 +20,7 @@ export default function ConfirmAttendance() {
       });
 
       if (response.ok) {
-        setMensaje("Gracias por tu confirmación. ¡Te espero, Joselyn!");
+        setMensaje("Gracias por tu confirmación. ¡Te espero, Jocelyn!");
         setNombre("");
       } else {
         setMensaje("Hubo un error al guardar la confirmación. Inténtalo nuevamente.");
