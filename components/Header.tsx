@@ -18,19 +18,11 @@ export default function Header() {
             uno de esos momentos ha llegado.&ldquo;
           </p>
         </div>
-        <div
-          className="bg-[url('/cuerpo_pie.png')] bg-cover bg-center bg-no-repeat h-40 flex items-center justify-center"
-          style={{ backgroundSize: "100% auto" }}
-        ></div>
       </section>
 
       {/* Sección 2: Imagen de la Princesa y Detalles con Encabezado y Pie */}
       <section ref={ref}>
-        <div
-          className="bg-[url('/encabezado.png')] bg-cover bg-center bg-no-repeat h-40 flex items-center justify-center"
-          style={{ backgroundSize: "100% auto" }}
-        ></div>
-        <div className="bg-transparent py-8 px-4 sm:px-8 md:px-16 lg:px-24 mx-4">
+         <div className="bg-transparent py-8 px-4 sm:px-8 md:px-16 lg:px-24 mx-4">
           <div className="mb-6 mt-4">
             <img
               src="/princesa.png"
