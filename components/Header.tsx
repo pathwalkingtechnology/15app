@@ -1,6 +1,6 @@
-"use client"
-import Image from 'next/image';
-import { useState, useEffect, useRef } from 'react';
+"use client";
+import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
 
 export default function Header() {
   const [visible, setVisible] = useState(false);
@@ -14,74 +14,75 @@ export default function Header() {
         const windowHeight = window.innerHeight;
         const offset = 0.5;
 
-        if (window.scrollY + windowHeight * offset > top + height / 2) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
+        setVisible(window.scrollY + windowHeight * offset > top + height / 2);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [ref]);
-  
+
   return (
-    <header className="text-center p-6 relative">
-      
-      {/* Sección 1: Citas */}
-      <div className="flex flex-col items-center mb-12">
+    <header className="text-center p-6 bg-white relative">
+      {/* Sección 1: Cita inspiradora */}
+      <section className="flex flex-col items-center mb-12">
         <Image
           src="/encabezado.png"
-          alt="Imagen de encabezado"
-          width={200}
-          height={100}
-          className="mx-auto mb-4"
+          alt="Encabezado decorativo"
+          width={800}
+          height={150}
+          className="w-full max-w-md mx-auto mb-4"
         />
-        <p className="text-4xl mb-4 font-cursive text-titleGreen">&quot;Existen momentos en la vida que imaginamos, soñamos y esperamos, uno de esos momentos ha llegado.&quot;</p>
+        <p className="text-3xl sm:text-4xl font-cursive text-titleGreen italic px-4">
+          &ldquo;Existen momentos en la vida que imaginamos, soñamos y esperamos,
+          uno de esos momentos ha llegado.&ldquo;
+        </p>
         <Image
           src="/cuerpo_pie.png"
-          alt="Imagen de pie"
-          width={200}
-          height={100}
-          className="mx-auto mt-4"
+          alt="Pie decorativo"
+          width={800}
+          height={150}
+          className="w-full max-w-md mx-auto mt-4"
         />
-      </div>
-      
-      {/* Sección 2: Contenido principal */}
-      <div
+      </section>
+
+      {/* Sección 2: Detalle de los 15 años */}
+      <section
         ref={ref}
-        className={`flex flex-col items-center ${visible ? 'animate-fadeIn' : 'animate-fadeOut'}`}
+        className={`flex flex-col items-center transition-opacity duration-700 ${
+          visible ? "opacity-100" : "opacity-0"
+        }`}
       >
         <Image
           src="/encabezado.png"
-          alt="Imagen de encabezado"
-          width={200}
-          height={100}
-          className="mx-auto mb-4"
+          alt="Encabezado decorativo"
+          width={800}
+          height={150}
+          className="w-full max-w-md mx-auto mb-4"
         />
         <div className="mb-6">
           <Image
             src="/princesa.png"
             alt="Imagen de la princesa"
-            width={200}
-            height={150}
-            className="mx-auto"
+            width={400}
+            height={300}
+            className="w-full max-w-xs mx-auto"
           />
         </div>
-        <h1 className="text-6xl mb-4 font-cursive text-titleGreen">Mis 15 Años</h1>
-        <h2 className="text-2xl mt-2">Joselyn Natali Valencia</h2>
+        <h1 className="text-5xl sm:text-6xl font-cursive text-titleGreen mb-4">
+          Mis 15 Años
+        </h1>
+        <h2 className="text-xl sm:text-2xl text-primaryGreen mt-2">
+          Joselyn Natali Valencia
+        </h2>
         <Image
           src="/cuerpo_pie.png"
-          alt="Imagen de pie"
-          width={200}
-          height={100}
-          className="mx-auto mt-4"
+          alt="Pie decorativo"
+          width={800}
+          height={150}
+          className="w-full max-w-md mx-auto mt-4"
         />
-      </div>
+      </section>
     </header>
   );
 }
