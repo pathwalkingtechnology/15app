@@ -12,13 +12,9 @@ export const POST = async (req) => {
   }
 
   try {
-    const { error } = await supabase
+    await supabase
       .from('invitados')
       .insert([{ nombre, confirmacion: true }]);
-
-    if (error) {
-      throw error;
-    }
 
     return new Response(JSON.stringify({ mensaje: 'Confirmación de asistencia registrada' }), {
       status: 200,
