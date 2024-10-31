@@ -20,7 +20,7 @@ export const POST = async (req) => {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (error) {
+  } catch {
     return new Response(JSON.stringify({ error: 'Error al registrar la confirmación' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
