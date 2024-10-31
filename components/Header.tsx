@@ -42,7 +42,7 @@ export default function Header() {
             Mis 15 Años
           </h1>
           <h2 className="text-lg sm:text-xl text-primaryGreen mt-2">
-            Joselyn Natali Valencia
+            Jocelyn Natali Valencia
           </h2>
         </div>
         <div
