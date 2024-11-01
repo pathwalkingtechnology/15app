@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Invitacion 15 Joselyn",
+  title: "Invitacion 15 Jocelyn",
   description: "Sitio generado por Milton M. De Campos con next app",
 };
 
