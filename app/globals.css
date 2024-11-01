@@ -12,6 +12,10 @@
 /* Configuración para el cuerpo de la web */
 body {
   @apply text-primaryGreen font-sans antialiased;
+  background-image: url('/fondo.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .particles {
   position: absolute;
