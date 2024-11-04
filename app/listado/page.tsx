@@ -1,7 +1,6 @@
-// listado.tsx
 "use client";
 import { useEffect, useState } from 'react';
-import { supabase } from '../supabaseClient'; // Asegúrate de que el cliente esté correctamente importado
+import { supabase } from '../../supabaseClient'; // Ajusta la ruta si es necesario
 import { jsPDF } from 'jspdf';
 
 interface Invitado {
